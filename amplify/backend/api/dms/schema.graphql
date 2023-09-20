@@ -1,0 +1,90 @@
+type Donor {
+  Donor_ID: ID!
+  First_Name: String!
+  Last_Name: String!
+  Email: String!
+  Phone_Number: String
+  Address: String
+  Username: String!
+  Registration_Date: String!
+  Total_Donation_Amount: Float!
+  Donations: [Donation]
+  Transactions: [Transaction]
+}
+
+type Donation {
+  Donation_ID: ID!
+  Donor_ID: ID!
+  Amount: Float!
+  Donation_Date: String!
+  Status: DonationStatus!
+  Payment_Method: PaymentMethod!
+  Payment_Date: String
+  Comments: String
+  Donor: Donor!
+}
+
+enum DonationStatus {
+  PENDING
+  APPROVED
+  REJECTED
+}
+
+enum PaymentMethod {
+  CREDIT_CARD
+  PAYPAL
+  BANK_TRANSFER
+  CASH
+}
+
+type Transaction {
+  Transaction_ID: ID!
+  From_Account_ID: ID!
+  To_Account_ID: ID!
+  Amount: Float!
+  Transaction_Date: String!
+  Description: String
+  From_Account: Donor
+  To_Account: Donor
+}
+
+type Query {
+  getDonor(Donor_ID: ID!): Donor
+  getDonationsByDonor(Donor_ID: ID!): [Donation]
+  getTransactionsByDonor(Donor_ID: ID!): [Transaction]
+  getTransaction(Transaction_ID: ID!): Transaction
+}
+
+type Mutation {
+  createDonor(input: DonorInput): Donor
+  createDonation(input: DonationInput): Donation
+  createTransaction(input: TransactionInput): Transaction
+}
+
+input DonorInput {
+  First_Name: String!
+  Last_Name: String!
+  Email: String!
+  Phone_Number: String
+  Address: String
+  Username: String!
+  Password: String!
+}
+
+input DonationInput {
+  Donor_ID: ID!
+  Amount: Float!
+  Donation_Date: String!
+  Status: DonationStatus!
+  Payment_Method: PaymentMethod!
+  Payment_Date: String
+  Comments: String
+}
+
+input TransactionInput {
+  From_Account_ID: ID!
+  To_Account_ID: ID!
+  Amount: Float!
+  Transaction_Date: String!
+  Description: String
+}

@@ -1,0 +1,20 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-dms-dev-201918-authRole",
+      "UnauthRoleArn": "arn:aws:iam::131697420078:role/amplify-dms-dev-201918-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::131697420078:role/amplify-dms-dev-201918-authRole",
+      "Region": "ap-south-1",
+      "DeploymentBucketName": "amplify-dms-dev-201918-deployment",
+      "UnauthRoleName": "amplify-dms-dev-201918-unauthRole",
+      "StackName": "amplify-dms-dev-201918",
+      "StackId": "arn:aws:cloudformation:ap-south-1:131697420078:stack/amplify-dms-dev-201918/e0c41f20-57c4-11ee-8a0b-02ef098b4e0a",
+      "AmplifyAppId": "d23lpu96fy1eig"
+    },
+    "categories": {
+      "api": {
+        "dms": {}
+      }
+    }
+  }
+}
