@@ -7,7 +7,8 @@ module.exports = {
     colors: {
       'primary' : '#8D6F65',
       'secondary' : '#DFAF8F',
-      'lblue' : '#1AD0D1'
+      'lblue' : '#1AD0D1',
+      'white' : '#FFFFFF',
     },
     screens: {
       sm: '480px',
