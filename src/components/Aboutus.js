@@ -1,6 +1,6 @@
 import React from 'react'
 import { BsCheckCircleFill } from 'react-icons/bs'
-import { icon_solidarity } from '../asserts';
+import { icon_solidarity } from '../assets';
 const Aboutus = () => {
   return (
     <div className='flex'>
